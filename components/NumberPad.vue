@@ -10,7 +10,7 @@
 		</template>
 
 		<!-- Number grid -->
-		<div class="grid grid-cols-3 gap-3 mb-3">
+		<div class="grid grid-cols-3 gap-3 mb-3 -mx-2 -my-2">
 			<UButton
 				v-for="num in [1, 2, 3, 4, 5, 6, 7, 8, 9]"
 				:key="num"

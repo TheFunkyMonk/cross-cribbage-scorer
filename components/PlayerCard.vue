@@ -6,7 +6,7 @@
 		<div class="w-full relative flex items-center aspect-square">
 			<div class="w-full flex items-center justify-between">
 				<div>
-					<div class="text-6xl font-bold">{{ score }}</div>
+					<div class="text-6xl font-bold -ml-2">{{ score }}</div>
 				</div>
 				<div class="flex flex-col">
 					<UButton
@@ -14,7 +14,7 @@
 						:color="colorScheme"
 						variant="solid"
 						size="sm"
-						class="-mr-2"
+						class="-mr-4"
 						square
 					>
 						<UIcon name="i-heroicons-plus" class="text-lg my-1" />
@@ -24,7 +24,7 @@
 						:color="colorScheme"
 						variant="solid"
 						size="sm"
-						class="-mr-2"
+						class="-mr-4"
 						square
 					>
 						<UIcon name="i-heroicons-minus" class="text-lg my-1" />
@@ -36,7 +36,7 @@
 					@click.stop="$emit('undo')"
 					:color="colorScheme"
 					variant="soft"
-					class="mb-1"
+					class="-mb-1"
 					size="sm"
 				>
 					<UIcon name="i-heroicons-arrow-uturn-left" class="" />
