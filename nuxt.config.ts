@@ -11,5 +11,5 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/ui',
   ],
-	css: ['~/main.css']
+	css: ['~/main.css'],
 })

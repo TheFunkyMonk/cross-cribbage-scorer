@@ -78,6 +78,9 @@ const {
 
 // Set page title
 useHead({
-	title: 'Cross Cribbage Scorer'
+	title: 'Cross Cribbage Scorer',
+	meta: [
+		{ name: 'description', content: 'Score keeping app for Cross Cribbage.' }
+	]
 })
 </script>
