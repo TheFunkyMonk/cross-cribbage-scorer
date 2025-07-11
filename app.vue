@@ -1,14 +1,7 @@
 <template>
 	<UApp>
 		<div class="min-h-screen bg-gray-800 text-white p-4">
-			<div class="mx-auto max-w-xs space-y-6">
-				<!-- Header -->
-				<div class="text-center">
-					<h1 class="text-3xl font-bold">
-						Cross Cribbage
-					</h1>
-					<p class="opacity-75 text-sm mt-1">Score Keeper</p>
-				</div>
+			<div class="mx-auto max-w-xs">
 
 				<!-- Player Panels -->
 				<div class="flex flex-wrap -mx-2">
@@ -45,7 +38,7 @@
 				/>
 
 				<!-- Reset Button -->
-				<div class="text-center">
+				<div class="text-center pt-1">
 					<UButton
 						@click="resetScores"
 						color="gray"

@@ -6,7 +6,7 @@
 		<div class="w-full relative flex items-center aspect-square">
 			<div class="w-full flex items-center justify-between">
 				<div>
-					<div class="text-6xl font-bold -ml-2">{{ score }}</div>
+					<div class="text-6xl font-bold leading-none -mt-1">{{ score }}</div>
 				</div>
 				<div class="flex flex-col">
 					<UButton
@@ -14,7 +14,7 @@
 						:color="colorScheme"
 						variant="solid"
 						size="sm"
-						class="-mr-4"
+						class="-mr-2"
 						square
 					>
 						<UIcon name="i-heroicons-plus" class="text-lg my-1" />
@@ -24,14 +24,14 @@
 						:color="colorScheme"
 						variant="solid"
 						size="sm"
-						class="-mr-4"
+						class="-mr-2"
 						square
 					>
 						<UIcon name="i-heroicons-minus" class="text-lg my-1" />
 					</UButton>
 				</div>
 			</div>
-			<div v-if="lastAction !== null && lastAction !== 0" class="absolute bottom-0 left-0 -mb-4 w-full flex justify-center">
+			<div v-if="lastAction !== null && lastAction !== 0" class="absolute bottom-0 left-0 -mb-2 w-full flex justify-center">
 				<UButton
 					@click.stop="$emit('undo')"
 					:color="colorScheme"

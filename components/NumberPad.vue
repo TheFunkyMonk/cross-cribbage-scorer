@@ -2,7 +2,7 @@
 	<UCard>
 		<template #header>
 			<div class="flex items-center justify-between px-1">
-				<h3 class="text-lg font-semibold">Enter Points</h3>
+				<h3 class="text-base font-semibold">Enter Points</h3>
 				<UBadge v-if="selectedValue" color="neutral" variant="solid">
 					{{ selectedValue }}
 				</UBadge>
@@ -10,7 +10,7 @@
 		</template>
 
 		<!-- Number grid -->
-		<div class="grid grid-cols-3 gap-3 mb-3 -mx-2 -my-2">
+		<div class="grid grid-cols-3 gap-3 mb-3">
 			<UButton
 				v-for="num in [1, 2, 3, 4, 5, 6, 7, 8, 9]"
 				:key="num"
@@ -47,7 +47,7 @@
 			</UButton>
 		</div>
 
-		<div v-if="selectedValue" class="mt-4 text-center text-sm text-gray-600">
+		<div v-if="selectedValue" class="mt-4 text-center text-xs text-gray-400">
 			Tap a player to add {{ selectedValue }} points
 		</div>
 	</UCard>
