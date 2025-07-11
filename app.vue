@@ -1,19 +1,19 @@
 <template>
 	<UApp>
 		<div class="min-h-screen bg-gray-800 text-white p-4">
-			<div class="mx-auto max-w-md space-y-6">
+			<div class="mx-auto max-w-xs space-y-6">
 				<!-- Header -->
 				<div class="text-center">
 					<h1 class="text-3xl font-bold">
 						Cross Cribbage
 					</h1>
-					<p class="opacity-75 mt-2">Score Keeper</p>
+					<p class="opacity-75 text-sm mt-1">Score Keeper</p>
 				</div>
+
 				<!-- Player Panels -->
-				<div class="space-y-4 flex flex-wrap -mx-2">
+				<div class="flex flex-wrap -mx-2">
 					<div class="w-1/2 aspect-square relative px-2">
 						<PlayerCard
-							player-name="Alice"
 							:score="player1Score"
 							:last-action="lastAction1"
 							:is-highlighted="!!selectedValue"
@@ -26,7 +26,6 @@
 					</div>
 					<div class="w-1/2 aspect-square relative px-2">
 						<PlayerCard
-							player-name="Bob"
 							:score="player2Score"
 							:last-action="lastAction2"
 							:is-highlighted="!!selectedValue"
@@ -39,6 +38,12 @@
 					</div>
 				</div>
 
+				<!-- Number Pad -->
+				<NumberPad
+					v-model:selected-value="selectedValue"
+					@confirm="clearSelectedValue"
+				/>
+
 				<!-- Reset Button -->
 				<div class="text-center">
 					<UButton
@@ -50,15 +55,6 @@
 						<UIcon name="i-heroicons-arrow-path" class="mr-2" />
 						Reset Game
 					</UButton>
-				</div>
-				<!-- Number Pad -->
-				<NumberPad
-					v-model:selected-value="selectedValue"
-					@confirm="clearSelectedValue"
-				/>
-				<!-- Storage indicator (optional - shows when data is persisted) -->
-				<div class="text-center text-xs text-gray-500 mt-4">
-					Scores automatically saved
 				</div>
 			</div>
 		</div>

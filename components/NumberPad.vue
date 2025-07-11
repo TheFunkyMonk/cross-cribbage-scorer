@@ -1,65 +1,49 @@
 <template>
 	<UCard>
 		<template #header>
-			<div class="flex items-center justify-between">
+			<div class="flex items-center justify-between px-1">
 				<h3 class="text-lg font-semibold">Enter Points</h3>
-				<UBadge v-if="selectedValue" color="primary" variant="solid">
+				<UBadge v-if="selectedValue" color="neutral" variant="solid">
 					{{ selectedValue }}
 				</UBadge>
 			</div>
 		</template>
 
-		<!-- Display current value -->
-		<div class="mb-4">
-			<div class="text-center">
-				<div class="text-2xl font-mono bg-gray-50 border rounded-lg p-3 min-h-[3rem] flex items-center justify-center">
-					{{ displayValue }}
-				</div>
-			</div>
-		</div>
-
 		<!-- Number grid -->
-		<div class="grid grid-cols-3 gap-2 mb-4">
+		<div class="grid grid-cols-3 gap-3 mb-3">
 			<UButton
 				v-for="num in [1, 2, 3, 4, 5, 6, 7, 8, 9]"
 				:key="num"
 				@click="addDigit(num)"
 				variant="outline"
-				size="lg"
-				class="aspect-square"
+				size="xl"
+				color="neutral"
+				class="aspect-square rounded-full flex items-center	justify-center text-3xl"
 			>
 				{{ num }}
 			</UButton>
 		</div>
 
 		<!-- Bottom row: 0, Clear, Enter -->
-		<div class="grid grid-cols-3 gap-2">
+		<div class="grid grid-cols-3 gap-3">
+			<div></div> <!-- Empty space for alignment -->
 			<UButton
 				@click="addDigit(0)"
 				variant="outline"
-				size="lg"
-				class="aspect-square"
+				size="xl"
+				color="neutral"
+				class="aspect-square rounded-full flex items-center justify-center text-3xl"
 			>
 				0
 			</UButton>
 			<UButton
 				@click="clear"
 				variant="soft"
-				color="red"
-				size="lg"
-				class="aspect-square"
+				size="xl"
+				color="neutral"
+				class="aspect-square rounded-full flex items-center	justify-center text-3xl"
 			>
 				<UIcon name="i-heroicons-backspace" />
-			</UButton>
-			<UButton
-				@click="enter"
-				variant="solid"
-				color="green"
-				size="lg"
-				class="aspect-square"
-				:disabled="!selectedValue"
-			>
-				<UIcon name="i-heroicons-check" />
 			</UButton>
 		</div>
 

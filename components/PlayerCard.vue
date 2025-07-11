@@ -3,52 +3,52 @@
 		:class="cardClasses"
 		@click="$emit('addScore')"
 	>
-		<div class="flex items-center justify-between w-full aspect-square">
-			<div>
-				<h2 class="text-lg font-semibold">{{ playerName }}</h2>
-				<div class="text-3xl font-bold mt-2">{{ score }}</div>
+		<div class="w-full relative flex items-center aspect-square">
+			<div class="w-full flex items-center justify-between">
+				<div>
+					<div class="text-6xl font-bold">{{ score }}</div>
+				</div>
+				<div class="flex flex-col">
+					<UButton
+						@click.stop="$emit('increment')"
+						:color="colorScheme"
+						variant="solid"
+						size="sm"
+						class="-mr-2"
+						square
+					>
+						<UIcon name="i-heroicons-plus" class="text-lg my-1" />
+					</UButton>
+					<UButton
+						@click.stop="$emit('decrement')"
+						:color="colorScheme"
+						variant="solid"
+						size="sm"
+						class="-mr-2"
+						square
+					>
+						<UIcon name="i-heroicons-minus" class="text-lg my-1" />
+					</UButton>
+				</div>
 			</div>
-			<div class="flex flex-col space-y-2">
+			<div v-if="lastAction !== null && lastAction !== 0" class="absolute bottom-0 left-0 -mb-4 w-full flex justify-center">
 				<UButton
-					@click.stop="$emit('increment')"
+					@click.stop="$emit('undo')"
 					:color="colorScheme"
-					variant="solid"
+					variant="soft"
+					class="mb-1"
 					size="sm"
-					square
 				>
-					<UIcon name="i-heroicons-plus" />
-				</UButton>
-				<UButton
-					@click.stop="$emit('decrement')"
-					:color="colorScheme"
-					variant="solid"
-					size="sm"
-					square
-				>
-					<UIcon name="i-heroicons-minus" />
+					<UIcon name="i-heroicons-arrow-uturn-left" class="" />
+					Undo {{ lastAction > 0 ? '+' : '' }}{{ lastAction }}
 				</UButton>
 			</div>
-		</div>
-		<div v-if="lastAction !== null && lastAction !== 0" class="mt-3 flex justify-center">
-			<UButton
-				@click.stop="$emit('undo')"
-				:color="colorScheme"
-				variant="soft"
-				size="xs"
-			>
-				<UIcon name="i-heroicons-arrow-uturn-left" class="mr-1" />
-				Undo {{ lastAction > 0 ? '+' : '' }}{{ lastAction }}
-			</UButton>
 		</div>
 	</UCard>
 </template>
 
 <script setup>
 const props = defineProps({
-	playerName: {
-		type: String,
-		required: true
-	},
 	score: {
 		type: Number,
 		default: 0
