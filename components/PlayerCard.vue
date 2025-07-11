@@ -71,11 +71,14 @@ const props = defineProps({
 defineEmits(['addScore', 'increment', 'decrement', 'undo'])
 
 const cardClasses = computed(() => {
+
 	const baseClasses = [
 		'cursor-pointer',
 		'transition-all',
 		'duration-200',
-		'text-white'
+		'text-white',
+		'border-none',
+		'ring-0'
 	]
 
 	// Background color based on color scheme
@@ -90,24 +93,24 @@ const cardClasses = computed(() => {
 	}
 
 	// Ring color for highlighting when value is selected
-	const ringClasses = {
-		blue: 'ring-blue-400 hover:ring-blue-500',
-		red: 'ring-red-400 hover:ring-red-500',
-		green: 'ring-green-400 hover:ring-green-500',
-		yellow: 'ring-yellow-400 hover:ring-yellow-500',
-		purple: 'ring-purple-400 hover:ring-purple-500',
-		pink: 'ring-pink-400 hover:ring-pink-500',
-		gray: 'ring-gray-400 hover:ring-gray-500'
-	}
+	// const ringClasses = {
+	// 	blue: 'ring-blue-400 hover:ring-blue-500',
+	// 	red: 'ring-red-400 hover:ring-red-500',
+	// 	green: 'ring-green-400 hover:ring-green-500',
+	// 	yellow: 'ring-yellow-400 hover:ring-yellow-500',
+	// 	purple: 'ring-purple-400 hover:ring-purple-500',
+	// 	pink: 'ring-pink-400 hover:ring-pink-500',
+	// 	gray: 'ring-gray-400 hover:ring-gray-500'
+	// }
 
 	const classes = [
 		...baseClasses,
 		backgroundClasses[props.colorScheme]
 	]
 
-	if (props.isHighlighted) {
-		classes.push('ring-2', ringClasses[props.colorScheme])
-	}
+	// if (props.isHighlighted) {
+	// 	classes.push('ring-2', ringClasses[props.colorScheme])
+	// }
 
 	return classes
 })

@@ -1,5 +1,10 @@
 <template>
-	<UCard class="bg-gray-800 text-white">
+	<UCard
+		variant="outline"
+		:ui="{
+			root: 'border border-gray-600 ring-gray-800 bg-gray-800 text-white',
+			header: 'border-b border-gray-600',
+		}" class="">
 		<template #header>
 			<div class="flex items-center justify-between px-1">
 				<h3 v-if="!selectedValue" class="text-base font-semibold">Enter Points</h3>
@@ -19,7 +24,7 @@
 				variant="outline"
 				size="xl"
 				color="neutral"
-				class="aspect-square rounded-full flex items-center	justify-center text-3xl bg-gray-800 hover:bg-gray-600 text-white"
+				class="aspect-square rounded-full flex items-center	justify-center text-3xl bg-gray-800 hover:bg-gray-600 text-white border border-gray-600 ring-gray-800"
 			>
 				{{ num }}
 			</UButton>
@@ -33,7 +38,7 @@
 				variant="outline"
 				size="xl"
 				color="neutral"
-				class="aspect-square rounded-full flex items-center justify-center text-3xl bg-gray-800 hover:bg-gray-600 text-white"
+				class="aspect-square rounded-full flex items-center justify-center text-3xl bg-gray-800 hover:bg-gray-600 text-white border border-gray-600 ring-gray-800"
 			>
 				0
 			</UButton>
@@ -42,7 +47,7 @@
 				variant="soft"
 				size="xl"
 				color="neutral"
-				class="aspect-square rounded-full flex items-center	justify-center text-3xl bg-gray-800 hover:bg-gray-600 text-white"
+				class="aspect-square rounded-full flex items-center	justify-center text-3xl bg-gray-800 hover:bg-gray-600 text-white border border-gray-600 ring-gray-800"
 			>
 				<UIcon name="i-heroicons-backspace" />
 			</UButton>
