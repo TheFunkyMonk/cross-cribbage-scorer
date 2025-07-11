@@ -8,7 +8,7 @@
 				<div>
 					<div class="text-6xl font-bold leading-none -mt-1">{{ score }}</div>
 				</div>
-				<div class="flex flex-col">
+				<!-- <div class="flex flex-col">
 					<UButton
 						@click.stop="$emit('increment')"
 						:color="colorScheme"
@@ -29,7 +29,7 @@
 					>
 						<UIcon name="i-heroicons-minus" class="text-lg my-1" />
 					</UButton>
-				</div>
+				</div> -->
 			</div>
 			<div v-if="lastAction !== null && lastAction !== 0" class="absolute bottom-0 left-0 -mb-2 w-full flex justify-center">
 				<UButton
