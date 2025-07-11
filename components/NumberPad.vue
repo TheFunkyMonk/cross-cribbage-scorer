@@ -2,7 +2,8 @@
 	<UCard>
 		<template #header>
 			<div class="flex items-center justify-between px-1">
-				<h3 class="text-base font-semibold">Enter Points</h3>
+				<h3 v-if="!selectedValue" class="text-base font-semibold">Enter Points</h3>
+				<h3 v-if="selectedValue" class="text-base font-semibold">Tap a Color to Add</h3>
 				<UBadge v-if="selectedValue" color="neutral" variant="solid">
 					{{ selectedValue }}
 				</UBadge>
