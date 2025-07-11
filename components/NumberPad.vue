@@ -1,10 +1,10 @@
 <template>
-	<UCard>
+	<UCard class="bg-gray-800 text-white">
 		<template #header>
 			<div class="flex items-center justify-between px-1">
 				<h3 v-if="!selectedValue" class="text-base font-semibold">Enter Points</h3>
 				<h3 v-if="selectedValue" class="text-base font-semibold">Tap a Color to Add</h3>
-				<UBadge v-if="selectedValue" color="neutral" variant="solid">
+				<UBadge v-if="selectedValue" color="neutral" variant="solid" class="bg-white text-gray-800">
 					{{ selectedValue }}
 				</UBadge>
 			</div>
@@ -19,7 +19,7 @@
 				variant="outline"
 				size="xl"
 				color="neutral"
-				class="aspect-square rounded-full flex items-center	justify-center text-3xl"
+				class="aspect-square rounded-full flex items-center	justify-center text-3xl bg-gray-800 hover:bg-gray-600 text-white"
 			>
 				{{ num }}
 			</UButton>
@@ -33,7 +33,7 @@
 				variant="outline"
 				size="xl"
 				color="neutral"
-				class="aspect-square rounded-full flex items-center justify-center text-3xl"
+				class="aspect-square rounded-full flex items-center justify-center text-3xl bg-gray-800 hover:bg-gray-600 text-white"
 			>
 				0
 			</UButton>
@@ -42,7 +42,7 @@
 				variant="soft"
 				size="xl"
 				color="neutral"
-				class="aspect-square rounded-full flex items-center	justify-center text-3xl"
+				class="aspect-square rounded-full flex items-center	justify-center text-3xl bg-gray-800 hover:bg-gray-600 text-white"
 			>
 				<UIcon name="i-heroicons-backspace" />
 			</UButton>
