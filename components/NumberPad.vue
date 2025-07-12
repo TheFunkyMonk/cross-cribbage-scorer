@@ -53,10 +53,6 @@
 				<UIcon name="i-heroicons-backspace" />
 			</UButton>
 		</div>
-
-		<div v-if="selectedValue" class="mt-4 text-center text-xs text-gray-400">
-			Tap a player to add {{ selectedValue }} points
-		</div>
 	</UCard>
 </template>
 
