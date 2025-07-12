@@ -1,43 +1,22 @@
 <template>
 	<UCard
 		:class="cardClasses"
+		:ui="{
+			root: 'w-full flex items-stretch',
+			header: 'w-full flex items-stretch',
+			body: 'p-4 sm:p-4',
+		}"
 		@click="$emit('addScore')"
 	>
-		<div class="w-full relative flex items-center aspect-square">
-			<div class="w-full flex items-center justify-between">
-				<div>
-					<div class="text-6xl font-bold leading-none -mt-1">{{ score }}</div>
-				</div>
-				<!-- <div class="flex flex-col">
-					<UButton
-						@click.stop="$emit('increment')"
-						:color="colorScheme"
-						variant="solid"
-						size="sm"
-						class="-mr-2"
-						square
-					>
-						<UIcon name="i-heroicons-plus" class="text-lg my-1" />
-					</UButton>
-					<UButton
-						@click.stop="$emit('decrement')"
-						:color="colorScheme"
-						variant="solid"
-						size="sm"
-						class="-mr-2"
-						square
-					>
-						<UIcon name="i-heroicons-minus" class="text-lg my-1" />
-					</UButton>
-				</div> -->
-			</div>
-			<div v-if="lastAction !== null && lastAction !== 0" class="absolute bottom-0 left-0 -mb-2 w-full flex justify-center">
+		<div class="w-full relative flex flex-col h-full justify-between">
+			<div class="text-6xl font-bold leading-none -mt-1">{{ score }}</div>
+			<div v-if="lastAction !== null && lastAction !== 0" class="-mb-2 w-full flex justify-center">
 				<UButton
-					@click.stop="$emit('undo')"
 					:color="colorScheme"
 					variant="soft"
-					class="-mb-1"
+					class=""
 					size="sm"
+					@click.stop="$emit('undo')"
 				>
 					<UIcon name="i-heroicons-arrow-uturn-left" class="" />
 					Undo {{ lastAction > 0 ? '+' : '' }}{{ lastAction }}

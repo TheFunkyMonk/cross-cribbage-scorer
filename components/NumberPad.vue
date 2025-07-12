@@ -3,12 +3,13 @@
 		variant="outline"
 		:ui="{
 			root: 'border border-gray-600 ring-gray-800 bg-gray-800 text-white',
-			header: 'border-b border-gray-600',
+			header: 'border-b border-gray-600 py-3',
+			body: 'p-4 sm:p-4',
 		}" class="">
 		<template #header>
-			<div class="flex items-center justify-between px-1">
-				<h3 v-if="!selectedValue" class="text-base font-semibold">Enter Points</h3>
-				<h3 v-if="selectedValue" class="text-base font-semibold">Tap a Color to Add</h3>
+			<div class="flex items-center">
+				<h3 v-if="!selectedValue" class="text-base font-semibold ">Enter Points</h3>
+				<h3 v-if="selectedValue" class="text-base font-semibold mr-2">Tap a Color to Add:</h3>
 				<UBadge v-if="selectedValue" color="neutral" variant="solid" class="bg-white text-gray-800">
 					{{ selectedValue }}
 				</UBadge>
@@ -20,11 +21,11 @@
 			<UButton
 				v-for="num in [1, 2, 3, 4, 5, 6, 7, 8, 9]"
 				:key="num"
-				@click="addDigit(num)"
 				variant="outline"
 				size="xl"
 				color="neutral"
-				class="aspect-square rounded-full flex items-center	justify-center text-3xl bg-gray-800 hover:bg-gray-600 text-white border border-gray-600 ring-gray-800"
+				class="aspect-square rounded-full flex items-center	justify-center text-2xl bg-gray-800 hover:bg-gray-600 text-white border border-gray-600 ring-gray-800"
+				@click="addDigit(num)"
 			>
 				{{ num }}
 			</UButton>

@@ -1,11 +1,11 @@
 <template>
 	<UApp>
 		<div class="min-h-screen bg-gray-800 text-white p-4">
-			<div class="mx-auto max-w-xs">
+			<div class="mx-auto max-w-2xs">
 
 				<!-- Player Panels -->
-				<div class="flex flex-wrap -mx-2">
-					<div class="w-1/2 aspect-square relative px-2">
+				<div class="flex flex-wrap -mx-2 mb-4">
+					<div class="w-1/2 aspect-[4/3] flex items-stretch relative px-2">
 						<PlayerCard
 							:score="player1Score"
 							:last-action="lastAction1"
@@ -17,7 +17,7 @@
 							@undo="undoLastAction(1)"
 						/>
 					</div>
-					<div class="w-1/2 aspect-square relative px-2">
+					<div class="w-1/2 aspect-[4/3] flex items-stretch relative px-2">
 						<PlayerCard
 							:score="player2Score"
 							:last-action="lastAction2"
@@ -40,10 +40,10 @@
 				<!-- Reset Button -->
 				<div class="text-center pt-1">
 					<UButton
-						@click="resetScores"
 						color="gray"
 						variant="soft"
 						size="lg"
+						@click="resetScores"
 					>
 						<UIcon name="i-heroicons-arrow-path" class="mr-2" />
 						Reset Game
